@@ -2,6 +2,7 @@ export default function MergeSort({
 	handleMergeSort,
 	unsortedArray,
 	handleComparisionAnimation,
+    handleSingleAnimation
 }) {
 	async function mergeSort(array, left, right) {
 		if (left >= right) {
@@ -48,11 +49,13 @@ export default function MergeSort({
 		}
 
 		while (i < leftArrLength) {
+            await handleSingleAnimation(left+i);
 			arr[k] = leftArr[i];
 			i++;
 			k++;
 		}
 		while (j < rightArrLength) {
+            await handleSingleAnimation(mid+1+j)
 			arr[k] = arr[mid + 1 + j];
 			j++;
 			k++;
