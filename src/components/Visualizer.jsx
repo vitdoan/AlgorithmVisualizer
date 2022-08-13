@@ -59,10 +59,11 @@ function Visualizer() {
 			setTimeout(resolve, ms);
 		});
 	}
-	async function handleInsertionSort(array, i, j) {
+	async function handleInsertionSort(i, j, key) {
 		return sleep(speed).then(() => {
 			setColorAtIndex(i);
 			setColorAtIndex(j, GREEN);
+            setColorAtIndex(key,"#b4e9fa");
 			return sleep(speed)
 				.then(() => {
 					setColorAtIndex(j, PURPLE);

@@ -1,8 +1,8 @@
 export default function InsertionSort({
 	handleInsertionSort,
 	unsortedArray,
-    setColorAtIndex,
-    handleSort,
+	setColorAtIndex,
+	handleSort,
 }) {
 	async function insertionSort(array) {
 		for (let i = 1; i < array.length; i++) {
@@ -11,16 +11,17 @@ export default function InsertionSort({
 					let temp = array[j];
 					array[j] = array[j - 1];
 					array[j - 1] = temp;
-                    console.log("current array: "+array);
-                    await handleInsertionSort(array,j-1,j);
+					console.log("current array: " + array);
+					await handleInsertionSort(j - 1, j, i);
 				} else {
 					break;
 				}
-                handleSort(array);
+				handleSort(array);
 			}
-            handleSort(array);
+			handleSort(array);
+            setColorAtIndex(i,"#b0b1fc");
 		}
-        console.log(array);
+		console.log(array);
 	}
 	return (
 		<a
