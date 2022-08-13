@@ -2,7 +2,7 @@ export default function MergeSort({
 	handleMergeSort,
 	unsortedArray,
 	handleComparisionAnimation,
-    handleSingleAnimation
+	handleSingleAnimation,
 }) {
 	async function mergeSort(array, left, right) {
 		if (left >= right) {
@@ -14,9 +14,6 @@ export default function MergeSort({
 		await merge(array, left, mid, right);
 		handleMergeSort(array);
 	}
-
-	// handleComparisionAnimation(i,mid+1+j);
-	// await new Promise(r => setTimeout(r, 2000));
 
 	async function merge(arr, left, mid, right) {
 		let leftArrLength = mid - left + 1;
@@ -36,8 +33,8 @@ export default function MergeSort({
 		let k = left;
 
 		while (i < leftArrLength && j < rightArrLength) {
-            await handleComparisionAnimation(i+left,mid+1+j);
-            console.log("array after promise: "+arr)
+			await handleComparisionAnimation(i + left, mid + 1 + j);
+			console.log("array after promise: " + arr);
 			if (leftArr[i] <= arr[mid + 1 + j]) {
 				arr[k] = leftArr[i];
 				i++;
@@ -49,13 +46,13 @@ export default function MergeSort({
 		}
 
 		while (i < leftArrLength) {
-            await handleSingleAnimation(left+i);
+			await handleSingleAnimation(left + i);
 			arr[k] = leftArr[i];
 			i++;
 			k++;
 		}
 		while (j < rightArrLength) {
-            await handleSingleAnimation(mid+1+j)
+			await handleSingleAnimation(mid + 1 + j);
 			arr[k] = arr[mid + 1 + j];
 			j++;
 			k++;
@@ -65,9 +62,7 @@ export default function MergeSort({
 	return (
 		<a
 			className="mergeSort"
-			onClick={() =>
-				mergeSort(unsortedArray, 0, unsortedArray.length - 1)
-			}
+			onClick={() => mergeSort(unsortedArray, 0, unsortedArray.length - 1)}
 			href
 		>
 			Merge Sort

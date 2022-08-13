@@ -5,11 +5,31 @@
     right: 0;
     background-color: #212131;
     height: 70px;
-    display: grid;
+    display: flex;
     padding: 10px 20px 5px;
+    justify-content: space-around;
 }
 .inputLabel, .speedLabel{
     color: white;
     padding: 0 5px;
     margin-right: 70px;
+}
+body{
+    background-color: #F0F0F0;
+}
+.sort:hover {
+	background-color: #444;
+}
+.sort:active {
+	background-color: rgb(50, 50, 50);
+	transition: 0.5s;
+}
+.nav2{
+    padding-top: 20px;
+}
+.nav2 .sort{
+    margin-left: 10px;
+}
+.nav1{
+    padding-top: 10px;
 }
