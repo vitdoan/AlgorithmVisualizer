@@ -6,8 +6,9 @@ import InsertionSort from "../algorithm/InsertionSort";
 import BubbleSort from "../algorithm/BubbleSort";
 import SelectionSort from "../algorithm/SelectionSort";
 import QuickSort from "../algorithm/QuickSort";
+import CocktailSort from "../algorithm/CocktailSort";
 
-const DEFAULT_SPEED = 5;
+const DEFAULT_SPEED = 2;
 const DEFAULT_VALUE = 100;
 const PURPLE = "#b0b1fc";
 const RED = "#FF6363";
@@ -219,6 +220,14 @@ function Visualizer() {
                         handleSort={handleSort}
 						unsortedArray={state}
                         handleQuickSort={handleInsertionSort}
+                    />
+                    <CocktailSort
+                        handleNumOfComparision={handleNumOfComparision}
+                        handleSort={handleSort}
+                        handleComparisionAnimation={handleComparisionAnimation}
+						unsortedArray={state}
+						setColorAtIndex={setColorAtIndex}
+                        handleSingleAnimation={handleSingleAnimation}
                     />
 				</div>
 			</div>
