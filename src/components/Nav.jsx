@@ -1,6 +1,13 @@
 import React from "react";
 
-function Nav({ calculateWidth, inputValue, calculateSpeed, speed, generate, generateWithoutDuplicate }) {
+function Nav({
+	calculateWidth,
+	inputValue,
+	calculateSpeed,
+	speed,
+	generate,
+	generateWithoutDuplicate,
+}) {
 	return (
 		<nav className="navBar">
 			<div className="nav1">
@@ -14,7 +21,7 @@ function Nav({ calculateWidth, inputValue, calculateSpeed, speed, generate, gene
 						min="4"
 						max="222"
 					></input>
-					<label className="inputLabel" for="inputLabel">
+					<label className="inputLabel" htmlFor="inputLabel">
 						Array Length: {inputValue}
 					</label>
 				</div>
@@ -26,21 +33,25 @@ function Nav({ calculateWidth, inputValue, calculateSpeed, speed, generate, gene
 						className="speedRange"
 						name="speedRange"
 						min="0"
-						max="400"
+						max="333"
 					></input>
-					<label className="speedLabel" for="speedLabel">
+					<label className="speedLabel" htmlFor="speedLabel">
 						Speed: {speed} ms
 					</label>
 				</div>
 			</div>
-            <div className="nav2">
+			<div className="nav2">
 				<a className="generate sort" onClick={generate} href>
 					Generate new array
 				</a>
-                <a className="noDuplicates sort" onClick={generateWithoutDuplicate} href>
-                    No Duplicates 
+				<a
+					className="noDuplicates sort"
+					onClick={generateWithoutDuplicate}
+					href
+				>
+					No Duplicates
 				</a>
-                </div>
+			</div>
 		</nav>
 	);
 }

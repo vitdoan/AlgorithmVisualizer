@@ -35,6 +35,9 @@ input[type="range"]::-webkit-slider-thumb {
 	color: red;
 	background-color: #b0b1fc;
 	margin: 0 0.5px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	z-index: 0;
 }
 .sortingAlgo {
 	position: fixed;

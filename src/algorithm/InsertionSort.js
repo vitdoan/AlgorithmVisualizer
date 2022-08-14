@@ -19,7 +19,7 @@ export default function InsertionSort({
 				handleSort(array);
 			}
 			handleSort(array);
-            setColorAtIndex(i,"#b0b1fc");
+			setColorAtIndex(i, "#b0b1fc");
 		}
 		console.log(array);
 	}

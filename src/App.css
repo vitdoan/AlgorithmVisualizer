@@ -8,6 +8,7 @@
     display: flex;
     padding: 10px 20px 5px;
     justify-content: space-around;
+    z-index: 10;
 }
 .inputLabel, .speedLabel{
     color: white;

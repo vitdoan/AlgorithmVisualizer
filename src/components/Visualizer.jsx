@@ -3,12 +3,15 @@ import "./Visualizer.css";
 import MergeSort from "../algorithm/MergeSort";
 import Nav from "./Nav";
 import InsertionSort from "../algorithm/InsertionSort";
+import BubbleSort from "../algorithm/BubbleSort";
+import SelectionSort from "../algorithm/SelectionSort";
 
 const DEFAULT_SPEED = 5;
 const DEFAULT_VALUE = 100;
 const PURPLE = "#b0b1fc";
 const RED = "#FF6363";
 const GREEN = "#BAFFB4";
+const BLUE = "#b4e9fa";
 
 function Visualizer() {
 	//States
@@ -20,7 +23,6 @@ function Visualizer() {
 
 	//Generate array when page is initialized
 	useEffect(generate, []);
-
 	//Generater random array from 0 to numOfElem
 	function generate() {
 		let arr = [];
@@ -63,7 +65,7 @@ function Visualizer() {
 		return sleep(speed).then(() => {
 			setColorAtIndex(i);
 			setColorAtIndex(j, GREEN);
-            setColorAtIndex(key,"#b4e9fa");
+			setColorAtIndex(key, BLUE);
 			return sleep(speed)
 				.then(() => {
 					setColorAtIndex(j, PURPLE);
@@ -74,10 +76,6 @@ function Visualizer() {
 				});
 		});
 	}
-
-	function handleBubbleSort() {}
-
-	function handleSelectionSort() {}
 
 	function calculateWidth(event) {
 		let input = event.target.value;
@@ -96,7 +94,6 @@ function Visualizer() {
 	}
 
 	async function handleComparisionAnimation(index1, index2) {
-		const arrayBars = getArrayBars();
 		setColorAtIndex(index1);
 		setColorAtIndex(index2);
 		await new Promise((r) =>
@@ -106,15 +103,13 @@ function Visualizer() {
 				r();
 			}, speed)
 		);
-		console.log("run " + index1 + " and " + index2);
 	}
 
 	async function handleSingleAnimation(index, color = "#BAFFB4") {
-		const arrayBars = document.getElementsByClassName("array-num");
-		arrayBars[index].style.backgroundColor = color;
+        setColorAtIndex(index,color);
 		await new Promise((r) =>
 			setTimeout(() => {
-				arrayBars[index].style.backgroundColor = "#b0b1fc";
+                setColorAtIndex(index,"#b0b1fc")
 				r();
 			}, speed)
 		);
@@ -158,21 +153,20 @@ function Visualizer() {
 						unsortedArray={state}
 						handleSort={handleSort}
 					/>
-
-					<a
-						className="bubbleSort sort"
-						onClick={handleBubbleSort}
-						href
-					>
-						Bubble Sort
-					</a>
-					<a
-						className="selectionSort sort"
-						onClick={handleSelectionSort}
-						href
-					>
-						Selection Sort
-					</a>
+                    <BubbleSort
+                        handleSort={handleSort}
+                        handleComparisionAnimation={handleComparisionAnimation}
+						unsortedArray={state}
+						setColorAtIndex={setColorAtIndex}
+                        handleSingleAnimation={handleSingleAnimation}
+                    />
+					<SelectionSort
+                        handleSort={handleSort}
+                        handleComparisionAnimation={handleComparisionAnimation}
+						unsortedArray={state}
+						setColorAtIndex={setColorAtIndex}
+                        handleSingleAnimation={handleSingleAnimation}
+                    />
 				</div>
 			</div>
 		</div>
