@@ -8,7 +8,7 @@ import SelectionSort from "../algorithm/SelectionSort";
 import QuickSort from "../algorithm/QuickSort";
 import CocktailSort from "../algorithm/CocktailSort";
 
-const DEFAULT_SPEED = 2;
+const DEFAULT_SPEED = 1;
 const DEFAULT_VALUE = 100;
 const PURPLE = "#b0b1fc";
 const RED = "#FF6363";

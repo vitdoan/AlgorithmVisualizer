@@ -20,8 +20,8 @@ export default function QuickSort({
 
 		let i = low - 1;
 		for (let j = low; j < high; j++) {
-            handleNumOfComparision();
 			if (arr[j] < pivot) {
+                handleNumOfComparision();
 				i++;
 				swap(arr, i, j);
                 await handleQuickSort(i,j,high);

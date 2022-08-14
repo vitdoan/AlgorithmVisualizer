@@ -13,15 +13,14 @@ export default function BubbleSort({
 				if (j + 1 < unsorted) {
 					await handleComparisionAnimation(j, j + 1);
 				}
-				handleNumOfComparision();
 				if (array[j] > array[j + 1]) {
+				    handleNumOfComparision();
 					let temp = array[j];
 					array[j] = array[j + 1];
 					array[j + 1] = temp;
 				}
 				handleSort(array);
 			}
-
 			handleSort(array);
 			setColorAtIndex(unsorted - 1, "#b4e9fa");
 		}
