@@ -14,6 +14,7 @@ function Nav({
 				<div>
 					<input
 						onChange={calculateWidth}
+						onClick={calculateWidth}
 						value={inputValue}
 						type="range"
 						className="inputRange"
@@ -29,6 +30,7 @@ function Nav({
 					<input
 						data-rangeslider
 						onChange={calculateSpeed}
+						onClick={calculateSpeed}
 						type="range"
 						className="speedRange"
 						name="speedRange"

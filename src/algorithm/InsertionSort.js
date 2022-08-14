@@ -11,7 +11,6 @@ export default function InsertionSort({
 					let temp = array[j];
 					array[j] = array[j - 1];
 					array[j - 1] = temp;
-					console.log("current array: " + array);
 					await handleInsertionSort(j - 1, j, i);
 				} else {
 					break;

@@ -5,6 +5,7 @@ import Nav from "./Nav";
 import InsertionSort from "../algorithm/InsertionSort";
 import BubbleSort from "../algorithm/BubbleSort";
 import SelectionSort from "../algorithm/SelectionSort";
+import QuickSort from "../algorithm/QuickSort";
 
 const DEFAULT_SPEED = 5;
 const DEFAULT_VALUE = 100;
@@ -62,11 +63,11 @@ function Visualizer() {
 		});
 	}
 	async function handleInsertionSort(i, j, key) {
-		return sleep(speed).then(() => {
+		return sleep(speed/2).then(() => {
 			setColorAtIndex(i);
 			setColorAtIndex(j, GREEN);
 			setColorAtIndex(key, BLUE);
-			return sleep(speed)
+			return sleep(speed/2)
 				.then(() => {
 					setColorAtIndex(j, PURPLE);
 					setColorAtIndex(i, GREEN);
@@ -101,7 +102,7 @@ function Visualizer() {
 				setColorAtIndex(index1, "#b0b1fc");
 				setColorAtIndex(index2, "#b0b1fc");
 				r();
-			}, speed)
+			}, speed/2)
 		);
 	}
 
@@ -111,7 +112,7 @@ function Visualizer() {
 			setTimeout(() => {
                 setColorAtIndex(index,"#b0b1fc")
 				r();
-			}, speed)
+			}, speed/2)
 		);
 	}
 
@@ -166,6 +167,11 @@ function Visualizer() {
 						unsortedArray={state}
 						setColorAtIndex={setColorAtIndex}
                         handleSingleAnimation={handleSingleAnimation}
+                    />
+                    <QuickSort
+                        handleSort={handleSort}
+						unsortedArray={state}
+                        handleQuickSort={handleInsertionSort}
                     />
 				</div>
 			</div>
