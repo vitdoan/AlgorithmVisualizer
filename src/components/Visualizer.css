@@ -71,3 +71,7 @@ input[type="range"]::-webkit-slider-thumb {
 	background-color: #212131;
 	padding:5px;
 }
+.numOfComparision{
+	padding: 10px 20px 0;
+	color: rgb(182, 181, 181);
+}

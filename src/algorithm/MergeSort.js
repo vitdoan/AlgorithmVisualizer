@@ -3,6 +3,7 @@ export default function MergeSort({
 	unsortedArray,
 	handleComparisionAnimation,
 	handleSingleAnimation,
+	handleNumOfComparision,
 }) {
 	async function mergeSort(array, left, right) {
 		if (left >= right) {
@@ -34,6 +35,7 @@ export default function MergeSort({
 
 		while (i < leftArrLength && j < rightArrLength) {
 			await handleComparisionAnimation(i + left, mid + 1 + j);
+			handleNumOfComparision();
 			if (leftArr[i] <= arr[mid + 1 + j]) {
 				arr[k] = leftArr[i];
 				i++;
@@ -58,7 +60,12 @@ export default function MergeSort({
 		}
 	}
 	return (
-		<a className="mergeSort sort" onClick={()=>mergeSort(unsortedArray, 0, unsortedArray.length-1)}>
+		<a
+			className="mergeSort sort"
+			onClick={() => {
+				mergeSort(unsortedArray, 0, unsortedArray.length - 1);
+			}}
+		>
 			Merge Sort
 		</a>
 	);

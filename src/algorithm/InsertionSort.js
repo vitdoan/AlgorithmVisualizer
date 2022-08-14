@@ -3,10 +3,12 @@ export default function InsertionSort({
 	unsortedArray,
 	setColorAtIndex,
 	handleSort,
+	handleNumOfComparision
 }) {
 	async function insertionSort(array) {
 		for (let i = 1; i < array.length; i++) {
 			for (let j = i; j > 0; j--) {
+				handleNumOfComparision();
 				if (array[j] < array[j - 1]) {
 					let temp = array[j];
 					array[j] = array[j - 1];
@@ -25,7 +27,8 @@ export default function InsertionSort({
 	return (
 		<a
 			className="insertionSort sort"
-			onClick={() => insertionSort(unsortedArray, unsortedArray.length)}
+			onClick={() => {
+				insertionSort(unsortedArray, unsortedArray.length)}}
 			href
 		>
 			Insertion Sort

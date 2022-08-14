@@ -1,7 +1,8 @@
 export default function QuickSort({
 	handleSort,
 	unsortedArray,
-    handleQuickSort
+    handleQuickSort,
+    handleNumOfComparision
 }) {
 	async function quickSort(arr, low, high) {
 		if (low >= high) {
@@ -19,7 +20,7 @@ export default function QuickSort({
 
 		let i = low - 1;
 		for (let j = low; j < high; j++) {
-
+            handleNumOfComparision();
 			if (arr[j] < pivot) {
 				i++;
 				swap(arr, i, j);
@@ -42,8 +43,8 @@ export default function QuickSort({
 	return (
 		<a
 			className="quickSort sort"
-			onClick={() =>
-				quickSort(unsortedArray, 0, unsortedArray.length - 1)
+			onClick={() =>{
+				quickSort(unsortedArray, 0, unsortedArray.length - 1)}
 			}
 			href
 		>

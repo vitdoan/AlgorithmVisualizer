@@ -21,12 +21,14 @@ function Visualizer() {
 	let [width, setNumOfWidth] = useState(10);
 	let [marginLeft, setMarginLeft] = useState((-numOfElem * (width + 1)) / 2);
 	let [speed, setSpeed] = useState(DEFAULT_SPEED);
+    let [comparision, setComparision] = useState(0);
 
 	//Generate array when page is initialized
 	useEffect(generate, []);
 	//Generater random array from 0 to numOfElem
 	function generate() {
 		let arr = [];
+        setComparision(0);
 		for (let i = 0; i < numOfElem; i++) {
 			arr.push(randomInt(5, 555));
 		}
@@ -35,10 +37,45 @@ function Visualizer() {
 	}
 
 	function generateWithoutDuplicate() {
+        setComparision(0);
 		let arr = [];
-		for (let i = 0; i < numOfElem; i++) {
-			arr.push(i);
-		}
+        let count = 0;
+        if(numOfElem <= 20){
+            for (let i = 30; count < numOfElem; i+=30) {
+                count++;
+                arr.push(i);
+            }
+        }
+        else if(numOfElem <= 50){
+            for (let i = 10; count < numOfElem; i+=10) {
+                count++;
+                arr.push(i);
+            }
+        }
+        else if(numOfElem <= 80){
+            for (let i = 7; count < numOfElem; i+=7) {
+                count++;
+                arr.push(i);
+            }
+        }
+        else if(numOfElem<=110){
+            for (let i = 5; count < numOfElem; i+=5) {
+                count++;
+                arr.push(i);
+            }
+        }
+        else if(numOfElem<=180){
+            for (let i = 3; count < numOfElem; i+=3) {
+                count++;
+                arr.push(i);
+            }
+        }
+        else{
+            for (let i = 2; count < numOfElem; i+=2) {
+                count++;
+                arr.push(i);
+            }
+        }
 		shuffleArray(arr);
 		setState(arr);
 	}
@@ -47,7 +84,7 @@ function Visualizer() {
 		return document.getElementsByClassName("array-num");
 	}
 
-	function setColorAtIndex(index, color = "#FF6363") {
+	function setColorAtIndex(index, color = RED) {
 		const arrayBars = getArrayBars();
 		arrayBars[index].style.backgroundColor = color;
 	}
@@ -94,23 +131,27 @@ function Visualizer() {
 		setSpeed(input);
 	}
 
+    function handleNumOfComparision(){
+        setComparision(++comparision);
+    }
+
 	async function handleComparisionAnimation(index1, index2) {
 		setColorAtIndex(index1);
 		setColorAtIndex(index2);
 		await new Promise((r) =>
 			setTimeout(() => {
-				setColorAtIndex(index1, "#b0b1fc");
-				setColorAtIndex(index2, "#b0b1fc");
+				setColorAtIndex(index1, PURPLE);
+				setColorAtIndex(index2, PURPLE);
 				r();
 			}, speed/2)
 		);
 	}
 
-	async function handleSingleAnimation(index, color = "#BAFFB4") {
+	async function handleSingleAnimation(index, color = GREEN) {
         setColorAtIndex(index,color);
 		await new Promise((r) =>
 			setTimeout(() => {
-                setColorAtIndex(index,"#b0b1fc")
+                setColorAtIndex(index,PURPLE)
 				r();
 			}, speed/2)
 		);
@@ -140,21 +181,25 @@ function Visualizer() {
 					);
 				})}
 			</div>
-			<div className="footer">
+			<div className="footer"> 
+                <div className="numOfComparision">Number of comparisions: {comparision}</div>
 				<div className="sortingAlgo">
 					<MergeSort
+                        handleNumOfComparision={handleNumOfComparision}
 						handleMergeSort={handleSort}
 						handleSingleAnimation={handleSingleAnimation}
 						handleComparisionAnimation={handleComparisionAnimation}
 						unsortedArray={state}
 					/>
 					<InsertionSort
+                        handleNumOfComparision={handleNumOfComparision}
 						setColorAtIndex={setColorAtIndex}
 						handleInsertionSort={handleInsertionSort}
 						unsortedArray={state}
 						handleSort={handleSort}
 					/>
                     <BubbleSort
+                        handleNumOfComparision={handleNumOfComparision}
                         handleSort={handleSort}
                         handleComparisionAnimation={handleComparisionAnimation}
 						unsortedArray={state}
@@ -162,6 +207,7 @@ function Visualizer() {
                         handleSingleAnimation={handleSingleAnimation}
                     />
 					<SelectionSort
+                        handleNumOfComparision={handleNumOfComparision}
                         handleSort={handleSort}
                         handleComparisionAnimation={handleComparisionAnimation}
 						unsortedArray={state}
@@ -169,6 +215,7 @@ function Visualizer() {
                         handleSingleAnimation={handleSingleAnimation}
                     />
                     <QuickSort
+                        handleNumOfComparision={handleNumOfComparision}
                         handleSort={handleSort}
 						unsortedArray={state}
                         handleQuickSort={handleInsertionSort}
