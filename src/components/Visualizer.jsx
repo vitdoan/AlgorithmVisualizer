@@ -21,7 +21,7 @@ function Visualizer() {
 	let [numOfElem, setNumOfElem] = useState(DEFAULT_VALUE);
 	let [width, setNumOfWidth] = useState(10);
 	let [marginLeft, setMarginLeft] = useState((-numOfElem * (width + 1)) / 2);
-	let [speed, setSpeed] = useState(DEFAULT_SPEED);
+	let [speed, setSpeed] = useState(1);
     let [comparision, setComparision] = useState(0);
 
 	//Generate array when page is initialized

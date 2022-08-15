@@ -64,7 +64,7 @@ export default function CocktailSort({
 				cocktailSort(unsortedArray);
 			}}
 		>
-			CocktailSort Sort
+			Cocktail Shake Sort
 		</a>
 	);
 }
