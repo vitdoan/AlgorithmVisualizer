@@ -4,9 +4,9 @@
 
 > A responsive React web application visualizing various sorting algorithms including Merge Sort, Quick Sort, Bubble Sort, Selection Sort, Insertion Sort, and Cocktail Shake Sort.
 
-<p align="center">
-![6pylgp](https://user-images.githubusercontent.com/106452170/184562676-ff6abb35-a0ab-4a74-b05e-8f600a7b60bb.gif)
-</p>
+![6pylgp](https://user-images.githubusercontent.com/106452170/184562980-1aa23c70-758c-46e3-983e-04e7f4d2f751.gif)
+
+
 
 ### 🏠 [Homepage](https://vitdoan.github.io/vitdoan.github.io/)
 
