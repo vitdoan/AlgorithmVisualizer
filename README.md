@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to Sorting Visualizer 👋</h1>
 
-  <img align="center" alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
+  <img align="center" alt="Quick Sort Demo" src="https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000" />
 
 > A responsive React web application visualizing various sorting algorithms including Merge Sort, Quick Sort, Bubble Sort, Selection Sort, Insertion Sort, and Cocktail Shake Sort.
 
