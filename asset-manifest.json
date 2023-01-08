@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/vitdoan.github.io/static/css/main.2a84703b.css",
-    "main.js": "/vitdoan.github.io/static/js/main.7aaa4ef0.js",
+    "main.js": "/vitdoan.github.io/static/js/main.d4004e5b.js",
     "static/js/787.28cb0dcd.chunk.js": "/vitdoan.github.io/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/vitdoan.github.io/index.html",
     "main.2a84703b.css.map": "/vitdoan.github.io/static/css/main.2a84703b.css.map",
-    "main.7aaa4ef0.js.map": "/vitdoan.github.io/static/js/main.7aaa4ef0.js.map",
+    "main.d4004e5b.js.map": "/vitdoan.github.io/static/js/main.d4004e5b.js.map",
     "787.28cb0dcd.chunk.js.map": "/vitdoan.github.io/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2a84703b.css",
-    "static/js/main.7aaa4ef0.js"
+    "static/js/main.d4004e5b.js"
   ]
 }
