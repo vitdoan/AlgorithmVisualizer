@@ -33,7 +33,6 @@ function Visualizer() {
 		for (let i = 0; i < numOfElem; i++) {
 			arr.push(randomInt(5, 555));
 		}
-		console.log("ARRAY BEFORE: " + arr);
 		setState(arr);
 	}
 
@@ -118,7 +117,6 @@ function Visualizer() {
 
 	function calculateWidth(event) {
 		let input = event.target.value;
-		console.log(input);
 		const w = window.innerWidth;
 		let barWidth = (0.85 * w) / input - 1;
 		setNumOfElem(input);

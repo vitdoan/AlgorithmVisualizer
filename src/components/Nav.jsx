@@ -35,7 +35,7 @@ function Nav({
 						className="speedRange"
 						name="speedRange"
 						min="0"
-						max="333"
+						max="350"
 					></input>
 					<label className="speedLabel" htmlFor="speedLabel">
 						Speed: {speed} ms

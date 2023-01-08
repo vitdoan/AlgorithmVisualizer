@@ -13,7 +13,6 @@ export default function CocktailSort({
 
 		while (swapped) {
 			swapped = false;
-			let sorted = start;
 			for (let i = start; i < end - 1; ++i) {
 				if (arr[i] > arr[i + 1]) {
 					handleNumOfComparision();
